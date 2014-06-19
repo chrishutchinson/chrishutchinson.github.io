@@ -1,35 +1,35 @@
 var rand;
 
 var scriptData = [
-    {name: 'Angular', type: 'correct', description: 'HTML enhanced for web apps!', url: 'https://angularjs.org/'},
-    {name: 'Banana', type: 'correct', description: 'Banana is an opensource javascript application framework designed to create pure desktop and mobile applications. ', url: 'http://bananajs.com/'},
-    {name: 'Cola', type: 'correct', description: 'Constraint-Based Layout in the Browser', url: 'http://marvl.infotech.monash.edu/webcola/'},
-    {name: 'Bacon', type: 'correct', description: 'A small functional reactive programming lib for JavaScript.', url: 'https://github.com/baconjs/bacon.js/tree/master'},
-    {name: 'Three', type: 'correct', description: 'JavaScript 3D library', url: 'http://threejs.org/'},
-    {name: 'Kettle', type: 'correct', description: 'A rapid, bottom-up approach to developing Backbone views', url: 'http://smelnikov.github.io/kettle/'},
-    {name: 'Puddle', type: 'incorrect', description: '', url: ''},
-    {name: 'Zombie', type: 'correct', description: 'Zombie.js is a lightweight framework for testing client-side JavaScript code in a simulated environment.', url: 'http://zombie.labnotes.org/'},
-    {name: 'Raccoon', type: 'correct', description: 'Raccoon is a small framework for creating server-side javascript applications', url: 'http://raccoon.keetology.com/'},
-    {name: 'Grape', type: 'correct', description: 'Dead simple dependency injection!', url: 'https://github.com/andyhmltn/grape-js'},
-    {name: 'Shave', type: 'incorrect', description: '', url: ''},
-    {name: 'Plantpot', type: 'incorrect', description: '', url: ''},
-    {name: 'Aerial', type: 'incorrect', description: '', url: ''},
-    {name: 'Popcorn', type: 'correct', description: 'The HTML5 Media Framework', url: 'http://popcornjs.org/'},
-    {name: 'Pasta', type: 'correct', description: 'Pasta is a function that helps you write JavaScript MVC applications functionally.', url: 'https://github.com/ympbyc/Pasta'},
-    {name: 'Pyjama', type: 'incorrect', description: '', url: ''},
-    {name: 'Steak', type: 'incorrect', description: '', url: ''},
-    {name: 'Street', type: 'incorrect', description: '', url: ''},
-    {name: 'Corrupt', type: 'incorrect', description: '', url: ''},
-    {name: 'Door', type: 'incorrect', description: '', url: ''},
-    {name: 'Comedy', type: 'incorrect', description: '', url: ''},
-    {name: 'Smile', type: 'incorrect', description: '', url: ''},
-    {name: 'Colony', type: 'correct', description: 'In-browser graphs representing the links between your Node.js code and its dependencies.', url: 'https://github.com/hughsk/colony'},
-    {name: 'Fashion', type: 'incorrect', description: '', url: ''},
-    {name: 'Elder', type: 'incorrect', description: '', url: ''},
-    {name: 'Hybrid', type: 'incorrect', description: '', url: ''},
-    {name: 'Wallaby', type: 'incorrect', description: '', url: ''},
-    {name: 'Plastic', type: 'correct', description: 'Plastic.js allow you to created chainable API with a syntax and usage similar to popular api\' like jQuery and underscore.', url: 'http://masyl.github.io/plastic.js/'},
-    {name: 'Cloak', type: 'correct', description: 'A network layer for HTML5 games using Node.js.', url: 'http://incompl.github.io/cloak/'},
+    {name: 'Angular', type: 'script', description: 'HTML enhanced for web apps!', url: 'https://angularjs.org/'},
+    {name: 'Banana', type: 'script', description: 'Banana is an opensource javascript application framework designed to create pure desktop and mobile applications. ', url: 'http://bananajs.com/'},
+    {name: 'Cola', type: 'script', description: 'Constraint-Based Layout in the Browser', url: 'http://marvl.infotech.monash.edu/webcola/'},
+    {name: 'Bacon', type: 'script', description: 'A small functional reactive programming lib for JavaScript.', url: 'https://github.com/baconjs/bacon.js/tree/master'},
+    {name: 'Three', type: 'script', description: 'JavaScript 3D library', url: 'http://threejs.org/'},
+    {name: 'Kettle', type: 'script', description: 'A rapid, bottom-up approach to developing Backbone views', url: 'http://smelnikov.github.io/kettle/'},
+    {name: 'Puddle', type: 'noscript', description: '', url: ''},
+    {name: 'Zombie', type: 'script', description: 'Zombie.js is a lightweight framework for testing client-side JavaScript code in a simulated environment.', url: 'http://zombie.labnotes.org/'},
+    {name: 'Raccoon', type: 'script', description: 'Raccoon is a small framework for creating server-side javascript applications', url: 'http://raccoon.keetology.com/'},
+    {name: 'Grape', type: 'script', description: 'Dead simple dependency injection!', url: 'https://github.com/andyhmltn/grape-js'},
+    {name: 'Shave', type: 'noscript', description: '', url: ''},
+    {name: 'Plantpot', type: 'noscript', description: '', url: ''},
+    {name: 'Aerial', type: 'noscript', description: '', url: ''},
+    {name: 'Popcorn', type: 'script', description: 'The HTML5 Media Framework', url: 'http://popcornjs.org/'},
+    {name: 'Pasta', type: 'script', description: 'Pasta is a function that helps you write JavaScript MVC applications functionally.', url: 'https://github.com/ympbyc/Pasta'},
+    {name: 'Pyjama', type: 'noscript', description: '', url: ''},
+    {name: 'Steak', type: 'noscript', description: '', url: ''},
+    {name: 'Street', type: 'noscript', description: '', url: ''},
+    {name: 'Corrupt', type: 'noscript', description: '', url: ''},
+    {name: 'Door', type: 'noscript', description: '', url: ''},
+    {name: 'Comedy', type: 'noscript', description: '', url: ''},
+    {name: 'Smile', type: 'noscript', description: '', url: ''},
+    {name: 'Colony', type: 'script', description: 'In-browser graphs representing the links between your Node.js code and its dependencies.', url: 'https://github.com/hughsk/colony'},
+    {name: 'Fashion', type: 'noscript', description: '', url: ''},
+    {name: 'Elder', type: 'noscript', description: '', url: ''},
+    {name: 'Hybrid', type: 'noscript', description: '', url: ''},
+    {name: 'Wallaby', type: 'noscript', description: '', url: ''},
+    {name: 'Plastic', type: 'script', description: 'Plastic.js allow you to created chainable API with a syntax and usage similar to popular api\' like jQuery and underscore.', url: 'http://masyl.github.io/plastic.js/'},
+    {name: 'Cloak', type: 'script', description: 'A network layer for HTML5 games using Node.js.', url: 'http://incompl.github.io/cloak/'},
   ]
 
 angular.module('SONS')
@@ -52,6 +52,8 @@ angular.module('SONS')
 
     $scope.end = false;
 
+    $scope.guesses = [];
+
     $scope.guess = function(type) {
       // Score
       if($scope.current.type == type){
@@ -61,6 +63,8 @@ angular.module('SONS')
         $scope.score.wrong += 1;
         $scope.result = 'Incorrect!';
       }
+
+      $scope.guesses.push({ name: $scope.current.name, said: type, actual: $scope.current.type, result: $scope.result });
 
       // Description
       if($scope.current.description == ''){
@@ -103,5 +107,7 @@ angular.module('SONS')
 
       $scope.result = '';
       $scope.description = '';
+
+      $scope.guesses = [];
     };
   }]);

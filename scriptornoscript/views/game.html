@@ -6,8 +6,8 @@
 			<h1><small>What is</small> {{ current.name }}<small>..?</small></h1>
 
 			<!-- Guessing buttons -->
-			<a ng-click="guess('correct')" class="btn btn-lg btn-primary btn-guesser">Script</a>
-			<a ng-click="guess('incorrect')" class="btn btn-lg btn-danger btn-guesser">No Script</a>
+			<a ng-click="guess('script')" class="btn btn-lg btn-primary btn-guesser">Script</a>
+			<a ng-click="guess('noscript')" class="btn btn-lg btn-danger btn-guesser">No Script</a>
 			
 			<!-- Response -->
 			<h4>{{ result }}</h4>
@@ -18,6 +18,31 @@
 		<div class="col-md-8" ng-if="end">
 			<h1>Game Over!</h1>
 			<a ng-click="reset()" class="btn btn-lg btn-primary">Restart Game</a>
+			<hr />
+			<h3>Results</h3>
+			<table class="table table-striped spacer">
+				<tr>
+					<th>Name</th>
+					<th>You Said</th>
+					<th>Actual</th>
+					<th>Result</th>
+				</tr>
+				<tr ng-repeat="g in guesses">
+					<td><strong>{{ g.name }}</strong></td>
+					<td ng-switch="g.said">
+					  <p ng-switch-when="script">Script</p>
+					  <p ng-switch-when="noscript">No Script</p>
+					</td>
+					<td ng-switch="g.actual">
+					  <p ng-switch-when="script">Script</p>
+					  <p ng-switch-when="noscript">No Script</p>
+					</td>
+					<td ng-switch="g.result">
+						<span ng-switch-when="Correct!" class="label label-success">{{ g.result }}</span>
+						<span ng-switch-when="Incorrect!" class="label label-danger">{{ g.result }}</span>
+					</td>
+				</tr>
+			</table>
 		</div>
 
 		<!-- Scoreboard -->
