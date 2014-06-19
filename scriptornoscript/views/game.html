@@ -1,0 +1,36 @@
+<div class="container spacer">
+	<div class="row">
+		<!-- Game -->
+		<div class="col-md-8 text-center" ng-if="!end">
+			<!-- Question -->
+			<h1><small>What is</small> {{ current.name }}<small>..?</small></h1>
+
+			<!-- Guessing buttons -->
+			<a ng-click="guess('correct')" class="btn btn-lg btn-primary btn-guesser">Script</a>
+			<a ng-click="guess('incorrect')" class="btn btn-lg btn-danger btn-guesser">No Script</a>
+			
+			<!-- Response -->
+			<h4>{{ result }}</h4>
+			<p>{{ description }}</p>
+		</div>
+
+		<!-- Game Over! -->
+		<div class="col-md-8" ng-if="end">
+			<h1>Game Over!</h1>
+			<a ng-click="reset()" class="btn btn-lg btn-primary">Restart Game</a>
+		</div>
+
+		<!-- Scoreboard -->
+		<div class="col-md-4 well pull-right">
+			<h3>Current Score</h3>
+			<p>
+				<strong>Right:</strong> {{ score.right }}
+			</p>
+			<p>
+				<strong>Wrong:</strong> {{ score.wrong }}
+			</p>
+			<hr />
+			<h4>High Score: {{ best }}</h4>
+		</div>
+	</div>
+</div>

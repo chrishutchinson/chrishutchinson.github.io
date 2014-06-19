@@ -1,0 +1,19 @@
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,300,600,700);
+@import url(http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css);
+
+$body-bg: #e4e7ec;
+
+$font-family-base: 'Open Sans', sans-serif;
+$headings-color: #111;
+$headings-font-family: Avenir, sans-serif;
+$headings-font-weight: bold;
+
+@import 'bootstrap/bootstrap';
+
+.btn-guesser{
+  padding: 8px 46px;
+  font-size: 34px;
+  line-height: 1.33;
+  border-radius: 6px;
+}
+

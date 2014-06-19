@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html ng-app>
+<head>
+	<title>Script or No Script?</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.0-beta.7/angular.min.js"></script>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+	<script src="assets/js/ui.js"></script>
+	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+	<link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+	<link rel="stylesheet" href="assets/css/frontend.css" />
+
+	<script>
+	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+	  ga('create', 'UA-50419515-1', 'chrishutchinson.github.io');
+	  ga('send', 'pageview');
+
+	</script>
+</head>
+
+<body>
+	<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-menu">
+					<span class="sr-only">Menu</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="/scriptornoscript">Script or No Script</a>
+			</div>
+			<div class="collapse navbar-collapse navbar-right" id="main-menu">
+				<ul class="nav navbar-nav">
+					<li><a href="https://github.com/chrishutchinson/scriptornoscript"><i class="fa fa-github"></i> View on GitHub</a></li>
+					<li><a href="http://www.twitter.com/chrishutchinson"><i class="fa fa-twitter"></i> @ChrisHutchinson</a></li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+	<div class="jumbotron">
+		<h1>Script or No Script</h1>
+		<p>A simple guessing game for JavaScript scripts, libraries and frameworks</p>
+	</div>
+	<div class="container" ng-controller="ScriptCtrl">
+		<div class="row">
+			<div class="col-md-6 text-center" ng-if="!end">
+				<h1><small>What is</small> {{random()}}<small>..?</small></h1>
+
+				<button class="btn btn-xlg btn-primary" ng-click="vote(true)" id="vote-true">Script</button>
+				<button class="btn btn-xlg btn-danger" ng-click="vote(false)" id="vote-false">No Script</button>
+			</div>
+			<div class="col-md-6 text-center" ng-if="end">
+				<h1>That's a wrap!</h1>
+				<p>You've made it through them all. I'll be adding more soon - Thanks for playing!</p>
+			</div>
+			<div class="col-md-6">
+				<div class="row">
+					<div class="col-md-12 well">
+						<div class="col-md-6 text-center">
+							<h2><small>Correct</small></h2>
+							<p>{{scores('correct')}}</p>
+						</div>
+						<div class="col-md-6 text-center">
+							<h2><small>Incorrect</small></h2>
+							<p>{{scores('incorrect')}}</p>
+						</div>	
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-6 text-center">
+				<div ng-if="about.show">
+					<p>{{about.answer}}</p>
+					<h3><a href="{{about.url}}">{{about.title}}</a></h3>
+					<p>{{about.description}}</p>
+					<p>Think this is wrong? <i class="fa fa-twitter"></i> Tweet me <a href="http://www.twitter.com/chrishutchinson">@chrishutchinson</a></p>
+				</div>
+			</div>
+			<div class="col-md-6">
+				<h1>About Script or No Script</h1>
+				<p>Inspired by a desire to play around with Angular.js (hint!), and <a href="https://twitter.com/ironshay/status/370525864523743232">this Tweet</a> from @ironshay.
+			</div>
+		</div>
+	</div>
+
+	<nav class="navbar navbar-default navbar-fixed-bottom" role="navigation">
+	    <ul class="nav navbar-nav">
+			<p class="navbar-text">Created by <a href="http://www.twitter.com/chrishutchinson">Chris Hutchinson</a></p>
+		</ul>
+	</nav>
+
+</body>
+
+</html>
